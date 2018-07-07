@@ -1,0 +1,8 @@
+name: PlsCraftHub
+main: today.pls.hub.HubPlugin
+version: 1.0
+softdepend: ['NoCheatPlus']
+permissions:
+  plscrafthub.alwaysspawnbypass:
+    description: Allows bypassing being forced to go to spawn on every join.
+    default: false
