@@ -15,6 +15,8 @@ public class HubPlugin extends JavaPlugin {
     public void onEnable(){
         super.onEnable();
 
+
+
         if(getServer().getPluginManager().isPluginEnabled("NoCheatPlus")){
             hasNCP = true;
         }
@@ -25,7 +27,9 @@ public class HubPlugin extends JavaPlugin {
         }
         ncsbt.setOption(Team.Option.COLLISION_RULE, Team.OptionStatus.NEVER);
 
-        getServer().getPluginManager().registerEvents(new GenericListener(), this);
+        GenericListener gl = new GenericListener(this);
+        getServer().getPluginManager().registerEvents(gl, this);
+        getServer().getMessenger().registerOutgoingPluginChannel(this,"BungeeCord");
     }
 
     @Override
