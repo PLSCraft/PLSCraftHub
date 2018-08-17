@@ -9,16 +9,18 @@ public class HubPlugin extends JavaPlugin {
     public static Scoreboard nocollidescb;
     public static Team ncsbt;
 
-    public static boolean hasNCP = false;
+    public static boolean hasNCP = false, hasPLSCore = false;
 
     @Override
     public void onEnable(){
         super.onEnable();
 
-
-
         if(getServer().getPluginManager().isPluginEnabled("NoCheatPlus")){
             hasNCP = true;
+        }
+
+        if(getServer().getPluginManager().isPluginEnabled("PLSCore")){
+            hasPLSCore = true;
         }
 
         nocollidescb = getServer().getScoreboardManager().getMainScoreboard();
